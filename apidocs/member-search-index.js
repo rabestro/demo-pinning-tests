@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"legacy.forth","c":"ForthEvaluator","l":"ForthEvaluator()","u":"%3Cinit%3E()"}];updateSearchResults();
