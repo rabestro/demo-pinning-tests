@@ -7,14 +7,14 @@ import java.util.Map;
 import java.util.Stack;
 import java.util.stream.Collectors;
 
-<span class="nc" id="L10">public class ForthEvaluator {</span>
+<span class="fc" id="L10">public class ForthEvaluator {</span>
 	List&lt;Integer&gt; evaluateProgram(List&lt;String&gt; commands) {
-<span class="nc" id="L12">		Stack&lt;Integer&gt; stack = new Stack&lt;Integer&gt;();</span>
-<span class="nc" id="L13">		Map&lt;String, String&gt; name2definition = new HashMap&lt;String, String&gt;();</span>
-<span class="nc bnc" id="L14" title="All 2 branches missed.">		for (String command : commands) {</span>
-<span class="nc" id="L15">			command = command.toLowerCase();</span>
+<span class="fc" id="L12">		Stack&lt;Integer&gt; stack = new Stack&lt;Integer&gt;();</span>
+<span class="fc" id="L13">		Map&lt;String, String&gt; name2definition = new HashMap&lt;String, String&gt;();</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">		for (String command : commands) {</span>
+<span class="fc" id="L15">			command = command.toLowerCase();</span>
 
-<span class="nc bnc" id="L17" title="All 2 branches missed.">			if (command.startsWith(&quot;: &quot;)) {</span>
+<span class="pc bpc" id="L17" title="1 of 2 branches missed.">			if (command.startsWith(&quot;: &quot;)) {</span>
 <span class="nc" id="L18">				List&lt;String&gt; tokens = tokenize(command.substring(2, command.length() - 2));</span>
 <span class="nc" id="L19">				String name = tokens.get(0);</span>
 
@@ -25,29 +25,29 @@ import java.util.stream.Collectors;
 <span class="nc" id="L25">				String definition = replace(String.join(&quot; &quot;, tokens.subList(1, tokens.size())), name2definition);</span>
 <span class="nc" id="L26">				name2definition.put(name, definition);</span>
 <span class="nc" id="L27">			} else {</span>
-<span class="nc bnc" id="L28" title="All 2 branches missed.">				for (String token : tokenize(replace(command, name2definition))) {</span>
-<span class="nc bnc" id="L29" title="All 2 branches missed.">					if (isNumber(token)) {</span>
-<span class="nc" id="L30">						int number = Integer.parseInt(token);</span>
-<span class="nc" id="L31">						stack.push(number);</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">					} else if (token.equals(&quot;+&quot;)) {</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">				for (String token : tokenize(replace(command, name2definition))) {</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">					if (isNumber(token)) {</span>
+<span class="fc" id="L30">						int number = Integer.parseInt(token);</span>
+<span class="fc" id="L31">						stack.push(number);</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">					} else if (token.equals(&quot;+&quot;)) {</span>
 <span class="nc" id="L33">						checkStackSize(stack, &quot;Addition&quot;, 2);</span>
 
 <span class="nc" id="L35">						int number1 = stack.pop();</span>
 <span class="nc" id="L36">						int number2 = stack.pop();</span>
 <span class="nc" id="L37">						stack.push(number2 + number1);</span>
-<span class="nc bnc" id="L38" title="All 2 branches missed.">					} else if (token.equals(&quot;-&quot;)) {</span>
+<span class="pc bfc" id="L38" title="All 2 branches covered.">					} else if (token.equals(&quot;-&quot;)) {</span>
 <span class="nc" id="L39">						checkStackSize(stack, &quot;Subtraction&quot;, 2);</span>
 
 <span class="nc" id="L41">						int number1 = stack.pop();</span>
 <span class="nc" id="L42">						int number2 = stack.pop();</span>
 <span class="nc" id="L43">						stack.push(number2 - number1);</span>
-<span class="nc bnc" id="L44" title="All 2 branches missed.">					} else if (token.equals(&quot;*&quot;)) {</span>
+<span class="pc bfc" id="L44" title="All 2 branches covered.">					} else if (token.equals(&quot;*&quot;)) {</span>
 <span class="nc" id="L45">						checkStackSize(stack, &quot;Multiplication&quot;, 2);</span>
 
 <span class="nc" id="L47">						int number1 = stack.pop();</span>
 <span class="nc" id="L48">						int number2 = stack.pop();</span>
 <span class="nc" id="L49">						stack.push(number2 * number1);</span>
-<span class="nc bnc" id="L50" title="All 2 branches missed.">					} else if (token.equals(&quot;/&quot;)) {</span>
+<span class="pc bfc" id="L50" title="All 2 branches covered.">					} else if (token.equals(&quot;/&quot;)) {</span>
 <span class="nc" id="L51">						checkStackSize(stack, &quot;Division&quot;, 2);</span>
 
 <span class="nc" id="L53">						int number1 = stack.pop();</span>
@@ -58,57 +58,57 @@ import java.util.stream.Collectors;
 						}
 
 <span class="nc" id="L60">						stack.push(number2 / number1);</span>
-<span class="nc bnc" id="L61" title="All 2 branches missed.">					} else if (token.equals(&quot;dup&quot;)) {</span>
+<span class="pc bfc" id="L61" title="All 2 branches covered.">					} else if (token.equals(&quot;dup&quot;)) {</span>
 <span class="nc" id="L62">						checkStackSize(stack, &quot;Duplicating&quot;, 1);</span>
 
 <span class="nc" id="L64">						stack.push(stack.peek());</span>
-<span class="nc bnc" id="L65" title="All 2 branches missed.">					} else if (token.equals(&quot;drop&quot;)) {</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">					} else if (token.equals(&quot;drop&quot;)) {</span>
 <span class="nc" id="L66">						checkStackSize(stack, &quot;Dropping&quot;, 1);</span>
 
 <span class="nc" id="L68">						stack.pop();</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">					} else if (token.equals(&quot;swap&quot;)) {</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">					} else if (token.equals(&quot;swap&quot;)) {</span>
 <span class="nc" id="L70">						checkStackSize(stack, &quot;Swapping&quot;, 2);</span>
 
 <span class="nc" id="L72">						int number1 = stack.pop();</span>
 <span class="nc" id="L73">						int number2 = stack.pop();</span>
 <span class="nc" id="L74">						stack.push(number1);</span>
 <span class="nc" id="L75">						stack.push(number2);</span>
-<span class="nc bnc" id="L76" title="All 2 branches missed.">					} else if (token.equals(&quot;over&quot;)) {</span>
+<span class="pc bfc" id="L76" title="All 2 branches covered.">					} else if (token.equals(&quot;over&quot;)) {</span>
 <span class="nc" id="L77">						checkStackSize(stack, &quot;Overing&quot;, 2);</span>
 
 <span class="nc" id="L79">						stack.push(stack.get(stack.size() - 2));</span>
 					} else {
-<span class="nc" id="L81">						throw new IllegalArgumentException(</span>
-<span class="nc" id="L82">								String.format(&quot;No definition available for operator \&quot;%s\&quot;&quot;, token));</span>
+<span class="fc" id="L81">						throw new IllegalArgumentException(</span>
+<span class="fc" id="L82">								String.format(&quot;No definition available for operator \&quot;%s\&quot;&quot;, token));</span>
 					}
-<span class="nc" id="L84">				}</span>
+<span class="fc" id="L84">				}</span>
 			}
-<span class="nc" id="L86">		}</span>
-<span class="nc" id="L87">		return stack;</span>
+<span class="fc" id="L86">		}</span>
+<span class="fc" id="L87">		return stack;</span>
 	}
 
 	void checkStackSize(Stack&lt;Integer&gt; stack, String operation, int minSize) {
-<span class="nc bnc" id="L91" title="All 2 branches missed.">		if (stack.size() &lt; minSize) {</span>
-<span class="nc" id="L92">			throw new IllegalArgumentException(String.format(&quot;%s requires that the stack contain at least %d value%s&quot;,</span>
-<span class="nc bnc" id="L93" title="All 2 branches missed.">					operation, minSize, minSize == 1 ? &quot;&quot; : &quot;s&quot;));</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">		if (stack.size() &lt; minSize) {</span>
+<span class="fc" id="L92">			throw new IllegalArgumentException(String.format(&quot;%s requires that the stack contain at least %d value%s&quot;,</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">					operation, minSize, minSize == 1 ? &quot;&quot; : &quot;s&quot;));</span>
 		}
 <span class="nc" id="L95">	}</span>
 
 	String replace(String command, Map&lt;String, String&gt; name2definition) {
-<span class="nc" id="L98">		return String.join(&quot; &quot;, tokenize(command).stream().map(token -&gt; name2definition.getOrDefault(token, token))</span>
-<span class="nc" id="L99">				.collect(Collectors.toList()));</span>
+<span class="fc" id="L98">		return String.join(&quot; &quot;, tokenize(command).stream().map(token -&gt; name2definition.getOrDefault(token, token))</span>
+<span class="fc" id="L99">				.collect(Collectors.toList()));</span>
 	}
 
 	List&lt;String&gt; tokenize(String s) {
-<span class="nc bnc" id="L103" title="All 2 branches missed.">		return Arrays.stream(s.split(&quot; +&quot;)).filter(token -&gt; !token.isEmpty()).collect(Collectors.toList());</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">		return Arrays.stream(s.split(&quot; +&quot;)).filter(token -&gt; !token.isEmpty()).collect(Collectors.toList());</span>
 	}
 
 	boolean isNumber(String s) {
 		try {
-<span class="nc" id="L108">			Integer.parseInt(s);</span>
-<span class="nc" id="L109">			return true;</span>
-<span class="nc" id="L110">		} catch (NumberFormatException e) {</span>
-<span class="nc" id="L111">			return false;</span>
+<span class="fc" id="L108">			Integer.parseInt(s);</span>
+<span class="fc" id="L109">			return true;</span>
+<span class="fc" id="L110">		} catch (NumberFormatException e) {</span>
+<span class="fc" id="L111">			return false;</span>
 		}
 	}
 }
