@@ -65,45 +65,49 @@
 <h2><a name="Change_Log_Report"></a>Change Log Report</h2>
 <p>Total number of changed sets: 1</p><section>
 <h3><a name="Changes_between_2023-10-24_and_2023-11-24"></a>Changes between 2023-10-24 and 2023-11-24</h3>
-<p>Total commits: 9<br />Total number of files changed: 6</p>
+<p>Total commits: 10<br />Total number of files changed: 6</p>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>Timestamp</th>
 <th>Author</th>
 <th>Details</th></tr>
 <tr class="b">
+<td>2023-11-23 22:01:24</td>
+<td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
+<td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=7ec529d563e3b9be3912be29ac8bd0c975e3ed06&amp;content-type=text/vnd.viewcvs-markup">v 7ec529d563e3b9be3912be29ac8bd0c975e3ed06</a><br /><br />Add Spock Reports and SLF4J dependencies for testing<br /><br />The changes include adding Spock Reports and Simple Logging Facade for Java (SLF4J) as test scope dependencies in the pom.xml file. Spock Reports is added to generate human-readable test reports. The reports will improve how we track and understand test results across the team. SLF4J is necessary for logging during the tests. It will help in identifying and resolving issues that may arise during the testing phase.</td></tr>
+<tr class="a">
 <td>2023-11-23 21:44:39</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=1725f067e968b2b9fc909c791f85ff6edae92df7&amp;content-type=text/vnd.viewcvs-markup">v 1725f067e968b2b9fc909c791f85ff6edae92df7</a><br /><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/src/test/java/legacy/forth/ForthEvaluatorTest.java">src/test/java/legacy/forth/<b>ForthEvaluatorTest.java</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/src/test/java/legacy/forth/ForthEvaluatorTest.java?rev=1725f067e968b2b9fc909c791f85ff6edae92df7&amp;content-type=text/vnd.viewcvs-markup">v 1725f067e968b2b9fc909c791f85ff6edae92df7</a><br /><br />Add ForthEvaluatorTest and update pom.xml<br /><br />Added a new test class ForthEvaluatorTest.java in the legacy.forth package. The pom.xml file was updated with changes including lowering the Java version from 21 to 17 and adding the PMD dependency with version 6.55.0. Adjustments were made in the plugins to include maven-pmd-plugin and reorder others. The purpose of these changes is to improve the maintainability and ensure adherence to coding standards in the project.</td></tr>
-<tr class="a">
+<tr class="b">
 <td>2023-11-23 20:49:45</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=e8cb5567ae731f245eb60736bb8a3c02a873c3f6&amp;content-type=text/vnd.viewcvs-markup">v e8cb5567ae731f245eb60736bb8a3c02a873c3f6</a><br /><br />Update Jacoco plugin configuration in pom.xml<br /><br />Updated the project's pom.xml to better manage the Jacoco maven plugin version and reporting formats. Version number is now controlled by a property and the reporting format has been separated for clarity. A new reportSet was added to the plugin configuration to provide more detailed reports. This improves maintainability and provides clearer reporting.</td></tr>
-<tr class="b">
+<tr class="a">
 <td>2023-11-23 20:33:10</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/README.md"><b>README.md</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/README.md?rev=c653239e1d30639b27d0015e2592cb4f6ff0302e&amp;content-type=text/vnd.viewcvs-markup">v c653239e1d30639b27d0015e2592cb4f6ff0302e</a><br /><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=c653239e1d30639b27d0015e2592cb4f6ff0302e&amp;content-type=text/vnd.viewcvs-markup">v c653239e1d30639b27d0015e2592cb4f6ff0302e</a><br /><br />&quot;Added JaCoCo plugin configuration and updated README.md&quot;<br /><br />Added configuration for the JaCoCo Maven plugin to the pom.xml file. These changes introduce additional JaCoCo executions (prepare-agent, report, and jacoco-check) for code coverage and reporting during the test phase of the build lifecycle. The new configuration also sets coverage rules, specifying a minimum covered line ratio of 0.50. This ensures at least 50% code coverage to keep the quality of the codebase stable.<br /><br />A README.md file was also added, including a link to 'The Legacy Code Challenge', which describes the purpose for introducing the code coverage measures.</td></tr>
-<tr class="a">
+<tr class="b">
 <td>2023-11-23 20:32:51</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/src/main/java/legacy/forth/ForthEvaluator.java">src/main/java/legacy/forth/<b>ForthEvaluator.java</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/src/main/java/legacy/forth/ForthEvaluator.java?rev=b81d3896c2be447f25a9a835f166920e6ca2e6b1&amp;content-type=text/vnd.viewcvs-markup">v b81d3896c2be447f25a9a835f166920e6ca2e6b1</a><br /><br />Add ForthEvaluator in legacy package<br /><br />A new file, ForthEvaluator.java, was added in the legacy.forth package. This file contains the ForthEvaluator class that evaluates programs written in the Forth programming language. It supports basic arithmetic operations (+, -, *, /), stack manipulation commands (dup, drop, swap, over), and user-defined words via &quot;:&quot; command. Exception handling for edge cases like division by zero, redefining numbers, or using undefined operators is also implemented. This addition is a part of expanding the capability of the legacy system to interpret and execute Forth programs.</td></tr>
-<tr class="b">
+<tr class="a">
 <td>2023-11-23 20:19:32</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=bd77d691d17f9fd46cd960ebd242d959f4582118&amp;content-type=text/vnd.viewcvs-markup">v bd77d691d17f9fd46cd960ebd242d959f4582118</a><br /><br />Add new plugins to pom.xml<br /><br />Several new plugins were added to the pom.xml file. These plugins include 'maven-surefire-report-plugin', 'maven-failsafe-plugin', 'maven-site-plugin', and 'gmavenplus-plugin'. These were added to enhance the capabilities of the build process, improve error reports, and provide additional tools for site generation.</td></tr>
-<tr class="a">
+<tr class="b">
 <td>2023-11-23 20:17:57</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=cead3cc9684909ab3eceed0fbb463bb00e9574a7&amp;content-type=text/vnd.viewcvs-markup">v cead3cc9684909ab3eceed0fbb463bb00e9574a7</a><br /><br />Add Groovy dependency and update build plugins<br /><br />Added Groovy as a dependency for use in tests. Updated existing and added additional Maven plugins to increase code quality and testing capabilities. This includes adding the GMavenPlus plugin for Groovy compilation, the Jacoco plugin for code coverage reporting, and others. The standard Maven compiler plugin version has also been updated.</td></tr>
-<tr class="b">
+<tr class="a">
 <td>2023-11-23 20:11:14</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/.gitignore"><b>.gitignore</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/.gitignore?rev=bfad2b7a49e4635921add41a915eb01deff3610e&amp;content-type=text/vnd.viewcvs-markup">v bfad2b7a49e4635921add41a915eb01deff3610e</a><br /><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=bfad2b7a49e4635921add41a915eb01deff3610e&amp;content-type=text/vnd.viewcvs-markup">v bfad2b7a49e4635921add41a915eb01deff3610e</a><br /><br />&quot;Update .gitignore and enrich pom.xml documentation&quot;<br /><br />Added IntelliJ IDEA project files to `.gitignore` to prevent accidental commits of IDE-specific files. Extensively updated `pom.xml` to include detailed project information - from description, license, developer's info to SCM details, issue management, and distribution management. These changes will provide more clarity about the project and who's maintaining it. The update also rectifies java version property and adds new test dependencies for better project testing.</td></tr>
-<tr class="a">
+<tr class="b">
 <td>2023-11-23 20:05:40</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/LICENSE"><b>LICENSE</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/LICENSE?rev=cac5d50f0a1583edb3b624ee94481c28f8d8fe57&amp;content-type=text/vnd.viewcvs-markup">v cac5d50f0a1583edb3b624ee94481c28f8d8fe57</a><br /><br />Add MIT License to the project<br /><br />An MIT License file was added to the project. This license gives users express permission to use, modify, distribute and sell the software freely. It also disclaims any warranties and states the conditions for reusing the software. This step is crucial in securing mutual understanding and agreement between the developers and users of the software.</td></tr>
-<tr class="b">
+<tr class="a">
 <td>2023-11-23 19:58:57</td>
 <td>Jegors &#x10c;emisovs &lt;jegors_cemisovs@epam.com&gt;</td>
 <td><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/.gitignore"><b>.gitignore</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/.gitignore?rev=459d9e3bc6296595af477c4c5a5752bfd4d5bfe1&amp;content-type=text/vnd.viewcvs-markup">v 459d9e3bc6296595af477c4c5a5752bfd4d5bfe1</a><br /><a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml"><b>pom.xml</b></a> <a class="externalLink" href="https://github.com/rabestro/demo-pinning-tests/pom.xml?rev=459d9e3bc6296595af477c4c5a5752bfd4d5bfe1&amp;content-type=text/vnd.viewcvs-markup">v 459d9e3bc6296595af477c4c5a5752bfd4d5bfe1</a><br /><br />Add .gitignore and pom.xml files<br /><br />Added .gitignore file to exclude files and directories that are not necessary or should not be tracked by Git. This will make our version control cleaner and easier to navigate. Also, added pom.xml file to manage project dependencies, build and test settings in our Maven project.</td></tr></table></section></section>
